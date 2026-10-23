@@ -1,0 +1,25 @@
+# Environments and secrets
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+
+# Python artefacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Build output
+build/
+dist/
+
+# Local runtime data (when JARVIS_HOME points inside the repo)
+.jarvis-home/
+*.db
+*.db-wal
+*.db-shm
+*.log

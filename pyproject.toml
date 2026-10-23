@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jarvis-desktop"
+version = "1.0.0"
+description = "J.A.R.V.I.S. - a desktop AI assistant powered by the Groq API, with tool use and human-in-the-loop approval."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "PySide6-Essentials>=6.8",
+    "groq>=0.30",
+    "httpx>=0.27",
+    "pydantic>=2.7",
+    "keyring>=25",
+    "platformdirs>=4",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8",
+    "pytest-qt>=4.4",
+]
+build = [
+    "pyinstaller>=6.10",
+]
+
+[project.gui-scripts]
+jarvis = "jarvis.app:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+markers = [
+    "live: tests that call the real Groq API (require GROQ_API_KEY; skipped otherwise)",
+    "gui: tests that create Qt widgets (run offscreen)",
+]
+qt_api = "pyside6"

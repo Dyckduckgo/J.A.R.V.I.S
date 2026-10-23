@@ -17,11 +17,11 @@ Date: 2026-10-23. Platform: Windows 10 Pro 19045, Python 3.14.3.
 
 ## 2. Starting point (Phase 1)
 
-* `F:\New folder (2)\J.A.R.V.I.S` was **empty** and **not a Git repository**.
+* The project folder was **empty** and **not a Git repository**.
   No files existed to preserve; nothing outside this folder was modified.
-* A sibling folder `F:\New folder (2)\backup jarvis` contains an earlier,
-  unrelated attempt (including a `.env` file). It was **not read beyond its
-  folder listing and `pyproject.toml`, and not modified**. Its `.env` was never opened.
+* A sibling folder on the development machine holds an earlier, unrelated
+  attempt. It was **not read beyond its folder listing and `pyproject.toml`,
+  and not modified**; its secrets file was never opened.
 * Toolchain found: Python 3.14.3 (global), Tk 8.6, Node, Git. `GROQ_API_KEY` was not set.
 * A project virtual environment was created at `.venv`; all work used it.
 
@@ -182,7 +182,7 @@ machine, rendering and shutdown instead:
 | L6 | A worker stuck in a call that ignores cancellation is abandoned (daemon thread) 3 s after the window closes. | Process still exits. |
 | L7 | Chat view creates one widget per message (no virtualisation); 240 messages load in ~1.4 s. | Start new conversations for very long sessions. |
 | L8 | The frozen build is unsigned and ~134 MB; no installer (MSI) is produced. | Code-sign and wrap with an installer for distribution. |
-| L9 | The project folder is not a Git repository; nothing was committed. | `git init` and commit when ready (`.gitignore` provided). |
+| L9 | No CI pipeline is configured; tests and the build were run locally. | Add a Windows CI job running `pytest` and `scripts\build_windows.ps1`. |
 
 ## 9. Documentation cross-check
 

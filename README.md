@@ -20,7 +20,8 @@ consequences waits for you to approve it.
 ## Install and run (from source)
 
 ```powershell
-cd "F:\New folder (2)\J.A.R.V.I.S"
+git clone https://github.com/Dyckduckgo/J.A.R.V.I.S.git
+cd J.A.R.V.I.S
 python -m venv .venv
 .venv\Scripts\python -m pip install -e ".[dev]"
 .venv\Scripts\jarvis
@@ -118,3 +119,7 @@ runs a headless smoke test of the frozen app.
 | "rate limit reached" / "too large for … your plan" | Free-tier limits are low on large models: wait, start a new conversation, lower *History messages*, or pick a smaller model such as `llama-3.1-8b-instant`. |
 | "model … is not available" | Settings → General → **Refresh** the model list and choose another. |
 | Settings or history reset after start-up | The file was corrupt; the old copy was kept next to it (`*.invalid-*` / `*.corrupt-*`). |
+
+## License
+
+MIT – see [LICENSE](LICENSE).
